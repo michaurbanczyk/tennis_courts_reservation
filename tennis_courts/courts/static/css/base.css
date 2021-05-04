@@ -1,3 +1,9 @@
+.main{
+    height: 450px;
+    background: url("../img/tennis.jpg");
+    background-position: -100px -500px;
+}
+
 #content {
     margin-left: 10%;
     margin-right: 10%;
@@ -11,4 +17,10 @@
 .card-add {
     height: 500px;
     margin-bottom: 50px;
+}
+
+.jumbotron-addons {
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 100%;
 }
