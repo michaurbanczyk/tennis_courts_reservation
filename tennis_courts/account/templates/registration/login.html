@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+    <div>
+        <h1>Sign In</h1>
+        {% if forms.error %}
+            <p>
+                Wrong username or password. Please try again!
+            </p>
+        {% else %}
+            <p>Sign In here or create an account
+                <a href="#">Here</a>
+            </p>
+        {% endif %}
+        <div class="login-form">
+            <form action="{% url 'login' %}" method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}"/>
+                <p>
+                    <input type="submit" value="Sign In">
+                </p>
+            </form>
+            <p>
+                <a href="#">Forgot the password?</a>
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
