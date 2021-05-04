@@ -2,3 +2,13 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.card-class {
+    background-color: white;
+    text-align: center;
+}
+
+.card-add {
+    height: 500px;
+    margin-bottom: 50px;
+}

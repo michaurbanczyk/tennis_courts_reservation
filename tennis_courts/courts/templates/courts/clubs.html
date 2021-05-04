@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{#{% load thumbnail %}#}
+{% load thumbnail %}
 
 {% block title %}Tennis Clubs{% endblock %}
 
@@ -8,20 +8,33 @@
     <div class="jumbotron">
     <h1 class="display-4">Choose your tennis club:</h1>
     <hr class="my-4">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" placeholder="Search for your tennis club...">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>
+    <hr class="my-4">
         <div class="row">
             {% for club in all_clubs %}
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card card-add" style="">
+                    {% thumbnail club.main_image "300x300" crop="100%" as im%}
                         <img src="
 
-                                {% if club.main_image %}{{ club.main_image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+                                {% if im %}{{ im.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
                              alt={{ club.name }}>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ club.name }}</h5>
-                            <p class="card-text">{{ club.address }}</p>
-                            <p class="card-text">{{ club.zip_code }}</p>
-                            <a href="#" class="btn btn-primary">Go to {{ club.name }}</a>
+
+                        <div style="text-align: center">
+                            <h4 style="text-align: center">{{ club.name }}</h4>
                         </div>
+                        <ul class="list-group list-group-flush card-class">
+                            <li class="list-group-item">{{ club.address }}</li>
+                            <li class="list-group-item">{{ club.zip_code }}</li>
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-primary">Go to Courts</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             {% endfor %}
