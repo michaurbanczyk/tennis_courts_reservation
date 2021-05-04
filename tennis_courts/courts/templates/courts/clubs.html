@@ -25,19 +25,17 @@
                                 {% if im %}{{ im.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
                              alt={{ club.name }}>
 
-                        <div style="text-align: center">
-                            <h4 style="text-align: center">{{ club.name }}</h4>
+                        <div class="card-body" style="text-align: center">
+                            <h5 class="card-title">{{ club.name }}</h5>
+                            <p class="card-text">{{ club.address }}</p>
+                            <p class="card-text">{{ club.zip_code }} {{ club.city.name }}</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%">Go to Courts</a>
                         </div>
-                        <ul class="list-group list-group-flush card-class">
-                            <li class="list-group-item">{{ club.address }}</li>
-                            <li class="list-group-item">{{ club.zip_code }}</li>
-                            <li class="list-group-item">
-                                <a href="#" class="btn btn-primary">Go to Courts</a>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+    <script src="{% static "js/main.js" %}"></script>
 {% endblock %}
