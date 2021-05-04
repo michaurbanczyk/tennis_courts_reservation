@@ -5,5 +5,5 @@ app_name = 'courts'
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('regions/', views.regions_view, name="regions")
+    path('clubs/', views.clubs_view, name="clubs")
 ]

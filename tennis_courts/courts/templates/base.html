@@ -18,7 +18,7 @@
         <a class="nav-link" href="{% url "courts:home" %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url "courts:regions" %}">Book the Court</a>
+        <a class="nav-link" href="{% url "courts:clubs" %}">Book the Court</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -27,7 +27,13 @@
   </div>
 
 </nav>
-<div id="content">
+        <div class="jumbotron" style="text-align: center; width: auto">
+            <h1 class="display-4">Courts Reservation!</h1>
+                <p class="lead">Welcome on courtsreservation.com! Log in and start your journey with tennis!</p>
+                    <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
+        </div>
+        <div id="content">
             {% block content %}
             {% endblock %}
         </div>

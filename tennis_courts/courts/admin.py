@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import Region, City
 
-
-@admin.register(Region)
-class RegionAdmin(admin.ModelAdmin):
-    list_display = ('name', )
-    ordering = ('name', )
+from courts.models import Club, City
 
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'region', )
-    ordering = ('name',)
+    list_display = ('name', )
+
+
+@admin.register(Club)
+class ClubAdmin(admin.ModelAdmin):
+    list_display = ('name', 'address', 'zip_code', 'city')
+    ordering = ('name', )
 
