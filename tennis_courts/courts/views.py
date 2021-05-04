@@ -6,7 +6,7 @@ from courts.models import Club
 def home(request):
     return render(
         request,
-        'base.html'
+        'courts/home.html'
     )
 
 

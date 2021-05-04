@@ -1,7 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+{#{% load thumbnail %}#}
 
 {% block title %}Tennis Clubs{% endblock %}
 
 {% block content %}
-    <h1>Available clubs: </h1>
+    <div class="jumbotron">
+    <h1 class="display-4">Choose your tennis club:</h1>
+    <hr class="my-4">
+        <div class="row">
+            {% for club in all_clubs %}
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="
+
+                                {% if club.main_image %}{{ club.main_image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+                             alt={{ club.name }}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ club.name }}</h5>
+                            <p class="card-text">{{ club.address }}</p>
+                            <p class="card-text">{{ club.zip_code }}</p>
+                            <a href="#" class="btn btn-primary">Go to {{ club.name }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
